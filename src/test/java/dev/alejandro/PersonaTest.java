@@ -106,7 +106,7 @@ public class PersonaTest {
         System.setOut(oldOut);
     }
     @Test
-    @DisplayName("It should return 'mild thinness' if IMC is between 17 and 18.5")
+    @DisplayName("It should return 'normal weight' if IMC is between 17 and 18.5")
     void test_prints_normal_weight(){
 
         PrintStream oldOut = System.out;
@@ -126,7 +126,7 @@ public class PersonaTest {
         System.setOut(oldOut);
     }
     @Test
-    @DisplayName("It should return 'mild thinness' if IMC is between 17 and 18.5")
+    @DisplayName("It should return 'overweight' if IMC is between 17 and 18.5")
     void test_prints_overweight(){
 
         PrintStream oldOut = System.out;
@@ -146,7 +146,7 @@ public class PersonaTest {
         System.setOut(oldOut);
     }
     @Test
-    @DisplayName("It should return 'mild thinness' if IMC is between 30 and 35")
+    @DisplayName("It should return 'mild obesity' if IMC is between 30 and 35")
     void test_prints_mild_obesity(){
 
         PrintStream oldOut = System.out;
@@ -162,6 +162,26 @@ public class PersonaTest {
         String output = result.toString();
 
         assertThat(output, containsString("Mild obesity"));
+
+        System.setOut(oldOut);
+    }
+    @Test
+    @DisplayName("It should return 'moderated obesity' if IMC is between 30 and 40")
+    void test_prints_moderated_obesity(){
+
+        PrintStream oldOut = System.out;
+
+        double metersThin = 1.38;
+
+        ByteArrayOutputStream result = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(result));
+
+        persona.imcCalc(kg, metersThin);
+
+        String output = result.toString();
+
+        assertThat(output, containsString("Moderated obesity"));
 
         System.setOut(oldOut);
     }
