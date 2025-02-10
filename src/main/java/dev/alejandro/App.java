@@ -12,6 +12,8 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        Persona persona = new Persona(100, 1.50);
+        System.out.println(persona.imcCalc(persona.getKg(), persona.getMeters()));
     }
 }
