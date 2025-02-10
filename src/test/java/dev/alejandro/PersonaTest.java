@@ -101,7 +101,7 @@ public class PersonaTest {
 
         String output = result.toString();
 
-        assertThat(output, containsString("Moderated thinness"));
+        assertThat(output, containsString("Mild thinness"));
 
         System.setOut(oldOut);
     }

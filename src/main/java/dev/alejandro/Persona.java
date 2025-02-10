@@ -24,7 +24,7 @@ public class Persona {
 
         if(imc < 16) System.out.println("Severe Thinness");
         if(imc >= 16.0 && imc <= 17.0) System.out.println("Moderated thinness");
-
+        if(imc >= 17 && imc <= 18.5) System.out.println("Mild thinness");
         return imc; 
     }
 }
