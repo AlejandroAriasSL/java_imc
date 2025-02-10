@@ -32,4 +32,11 @@ public class PersonaTest {
 
         assertThat(persona.getMeters(), is(meters));
     }
+
+    @Test
+    @DisplayName("It should return the IMC of the person")
+    void test_returns_imc_of_person(){
+
+        assertThat(persona.imcCalc(persona.getKg(), persona.getMeters()), is(22.04));
+    }
 }
