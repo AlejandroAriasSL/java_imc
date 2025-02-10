@@ -28,6 +28,7 @@ public class Persona {
         if(imc >= 18.5 && imc <= 25 ) System.out.println("Normal weight");
         if(imc >= 25 && imc <= 30) System.out.println("Overweight");
         if(imc >= 30 && imc <= 35) System.out.println("Mild obesity");
+        if(imc >= 35 && imc <= 40) System.out.println("Moderated obesity");
         return imc; 
     }
 }
