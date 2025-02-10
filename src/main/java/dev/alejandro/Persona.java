@@ -18,4 +18,8 @@ public class Persona {
     public double getMeters(){
         return this.meters;
     }
+
+    public double imcCalc(double kg, double meters){
+        return Math.round(kg / Math.pow(meters, 2) * 100) / 100.0;
+    }
 }
