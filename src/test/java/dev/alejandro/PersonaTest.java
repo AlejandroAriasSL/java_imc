@@ -25,4 +25,11 @@ public class PersonaTest {
         assertThat(persona.getKg(), is(kg));
 
     }
+
+    @Test
+    @DisplayName("It should return the meters of the person")
+    void test_returns_meters_of_person(){
+
+        assertThat(persona.getMeters(), is(meters));
+    }
 }
