@@ -4,7 +4,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class PersonaTest {
 
@@ -38,5 +43,24 @@ public class PersonaTest {
     void test_returns_imc_of_person(){
 
         assertThat(persona.imcCalc(persona.getKg(), persona.getMeters()), is(22.04));
+    }
+
+    @Test
+    @DisplayName("It should print out printOut 'severe thinness' if IMC is under 16")
+    void test_prints_severe_thinness_if_imc_lower_than_17() throws Exception{
+
+        PrintStream oldOut = System.out;
+
+        ByteArrayOutputStream result = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(result));
+
+        persona.imcCalc(kg, meters);
+
+        String output = result.toString();
+
+        assertThat(output, containsString("Sever Thinnness"));
+
+        System.setOut(oldOut);
     }
 }
