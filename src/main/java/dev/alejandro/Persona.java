@@ -23,6 +23,7 @@ public class Persona {
         double imc = Math.round(kg / Math.pow(meters, 2) * 100) / 100.0;
 
         if(imc < 16) System.out.println("Severe Thinness");
+        if(imc >= 16.0 && imc <= 17.0) System.out.println("Moderated thinness");
 
         return imc; 
     }
