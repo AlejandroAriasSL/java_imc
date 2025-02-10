@@ -85,4 +85,24 @@ public class PersonaTest {
 
         System.setOut(oldOut);
     }
+    @Test
+    @DisplayName("It should return 'mild thinness' if IMC is between 17 and 18.5")
+    void test_prints_mild_thinness(){
+
+        PrintStream oldOut = System.out;
+
+        double metersThin = 1.92;
+
+        ByteArrayOutputStream result = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(result));
+
+        persona.imcCalc(kg, metersThin);
+
+        String output = result.toString();
+
+        assertThat(output, containsString("Moderated thinness"));
+
+        System.setOut(oldOut);
+    }
 }
