@@ -20,6 +20,10 @@ public class Persona {
     }
 
     public double imcCalc(double kg, double meters){
-        return Math.round(kg / Math.pow(meters, 2) * 100) / 100.0;
+        double imc = Math.round(kg / Math.pow(meters, 2) * 100) / 100.0;
+
+        if(imc < 16) System.out.println("Severe Thinness");
+
+        return imc; 
     }
 }

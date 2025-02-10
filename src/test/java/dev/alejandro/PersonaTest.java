@@ -51,15 +51,17 @@ public class PersonaTest {
 
         PrintStream oldOut = System.out;
 
+        double metersThin = 2.12;
+
         ByteArrayOutputStream result = new ByteArrayOutputStream();
 
         System.setOut(new PrintStream(result));
 
-        persona.imcCalc(kg, meters);
+        persona.imcCalc(kg, metersThin);
 
         String output = result.toString();
 
-        assertThat(output, containsString("Sever Thinnness"));
+        assertThat(output, containsString("Severe Thinness"));
 
         System.setOut(oldOut);
     }
