@@ -26,6 +26,7 @@ public class Persona {
         if(imc >= 16.0 && imc <= 17.0) System.out.println("Moderated thinness");
         if(imc >= 17 && imc <= 18.5) System.out.println("Mild thinness");
         if(imc >= 18.5 && imc <= 25 ) System.out.println("Normal weight");
+        if(imc >= 25 && imc <= 30) System.out.println("Overweight");
         return imc; 
     }
 }
