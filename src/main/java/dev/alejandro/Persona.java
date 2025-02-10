@@ -14,4 +14,8 @@ public class Persona {
     public double getKg(){
         return this.kg;
     }
+    
+    public double getMeters(){
+        return this.meters;
+    }
 }
