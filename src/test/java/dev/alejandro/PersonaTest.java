@@ -145,4 +145,24 @@ public class PersonaTest {
 
         System.setOut(oldOut);
     }
+    @Test
+    @DisplayName("It should return 'mild thinness' if IMC is between 30 and 35")
+    void test_prints_mild_obesity(){
+
+        PrintStream oldOut = System.out;
+
+        double metersThin = 1.48;
+
+        ByteArrayOutputStream result = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(result));
+
+        persona.imcCalc(kg, metersThin);
+
+        String output = result.toString();
+
+        assertThat(output, containsString("Mild obesity"));
+
+        System.setOut(oldOut);
+    }
 }
